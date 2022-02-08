@@ -11,7 +11,7 @@ breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Du
 	if (input  < lowLimit)
 	{
 	result.status = LOW;
-	result.breachedValue = lowLimit - input ;	 // Calculate the breached value
+	result.breachedValue = input - lowLimit ;	 // Calculate the breached value
 	}
     return result;
 }
