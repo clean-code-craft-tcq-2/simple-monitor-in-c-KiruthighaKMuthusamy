@@ -13,7 +13,7 @@ for (int i=0,i<3,i++)
 		{
 		asset(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j]));
 		}
-	    asset(floorf(batteryCond.parameter[3] * 100 / 100 == testResultarray[i].parameter[j]);
+	    asset(floorf(batteryCond.parameter[3] * 100 )/ 100 == testResultarray[i].parameter[j]);
 		asset(result == resultBattStatus[i]);
 }
 
