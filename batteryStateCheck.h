@@ -13,8 +13,8 @@
 
 typedef struct batteryCondition
 {
-	char* parameter[3];
-	char* status[3];
+	char parameter[3][15];
+	char status[3][5];
 	float breachedValue[3];
 	
 }batteryCondition;
