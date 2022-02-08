@@ -3,7 +3,7 @@
 
 // Assert statement is encapsulated in a function 
 
-/*void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultarray,float *limitArray, int *resultBattStatus)
+void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultarray,float *limitArray, int *resultBattStatus)
 
 {
 
@@ -19,9 +19,10 @@
 		assert(batteryCond.breachedValue[j]  == testResultarray[i].breachedValue[j]);
 		assert(result == resultBattStatus[i]);
 				}
+		printf("passed");
 	}
 
-}*/
+}
 
 int main() 
 {
@@ -30,7 +31,7 @@ int main()
 	
 		int result = batteryIsOk(50,10,0.5,limitArray);
 	
-/*	float testTempList[]  =      {20.5 , -1.5 , 50 , 40};         
+	float testTempList[]  =      {20.5 , -1.5 , 50 , 40};         
 	float testSOCList[] =        {19.5 , 40   , 80.5 , 40};
 	float testChargeRateList[] = {0.9,   0.5,   -1 , 0.3};
 	
@@ -39,17 +40,17 @@ int main()
    batteryCondition testResultArray[3];
    ;
 
-		testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
+	/*	testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
 		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
 		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
 		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};*/
-/*testResultArray1[0].parameter[0] = "Temparature";
-	testResultArray1[0].parameter[1] = "Temparature";
-	testResultArray1[0].parameter[2] = "Temparature";
-	testResultArray1[0].status[2] = "LOW";
+testResultArray1[0].parameter[0] = "Temparature";
+	testResultArray1[0].parameter[1] = "SOC";
+	testResultArray1[0].parameter[2] = "ChargeRate";
+	testResultArray1[0].status[2] = "OK";
 	testResultArray1[0].status[1] = "LOW";
-	testResultArray1[0].status[0] = "LOW";
-	testResultArray1[0].breachedValue[0] = 1;	
+	testResultArray1[0].status[0] = "HIGH";
+	testResultArray1[0].breachedValue[0] = -1.5;	
 	testResultArray1[0].breachedValue[1] = 1;	
 	testResultArray1[0].breachedValue[2] = 1;	
 		testResultArray1[1].parameter[0] = "Temparature";
@@ -81,6 +82,6 @@ int main()
 	testResultArray1[3].breachedValue[2] = 1;
 	int resultBattStatus[] = {1,1,1,0};
 	
-    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);*/
+    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);
 }
 
