@@ -1,6 +1,6 @@
 #include "batteryStateCheck.h"
 
-int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
+breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
 	breachAndValue result= {0,0.0};
 	if (input  < lowLimit)
@@ -11,7 +11,7 @@ int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
     return result;
 }
 
-int checkHigherLimit(float input, float highLimit)        // Avioding Duplication
+breachAndValue checkHigherLimit(float input, float highLimit)        // Avioding Duplication
 {
 	breachAndValue result= {0,0.0};
 	if (input  > highLimit)
@@ -30,11 +30,11 @@ void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int 
 void limitCheck(float value, float *limit, int parameter)
 {
 
-breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
-breachAndValue higherResult = checkHigherLimit(value , limit[1]);
+breachAndValue lowerResult = checkLowerLimit(value , limit);
+breachAndValue higherResult = checkHigherLimit(value , ++limit);
 
 strcpy(batteryCond.parameter[parameter],batteryParameters[parameter]);
-strcpy(batteryCond.status[parameter],batteryStatus[lowerResult.status + higherResult.status];  // Update the structure with HIGH\LOW status and  breached measure.
+strcpy(batteryCond.status[parameter],batteryStatus[lowerResult.status + higherResult.status]);  // Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
 
 printStatus(lowerResult,higherResult,parameter);
@@ -61,11 +61,11 @@ int chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 
 
 
-boolean batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
+bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
 {
   temperatureIsOk(temperature,&limitArray[0]);
   SOCIsOk(soc,&limitArray[2]);
   chargeRateIsOk(chargeRate,&limitArray[4]);
-  return((batteryCond[0].breachedValue) || (batteryCond[1].breachedValue) || (batteryCond[2].breachedValue))
+  return((batteryCond[0].breachedValue) || (batteryCond[1].breachedValue) || (batteryCond[2].breachedValue));
 }
 
