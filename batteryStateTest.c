@@ -5,7 +5,7 @@
 void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus)
 {
 
-for (int i=0,i<3,i++)
+for (int i=0,i<=3,i++)
 {
 	    int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
 		
