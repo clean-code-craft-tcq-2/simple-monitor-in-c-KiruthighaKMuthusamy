@@ -33,7 +33,7 @@ int main()
  {{"Temparature","LOW",-1.5},{"SOC","OK",0},{"ChargeRate","OK",0}},
  {{"Temparature","HIGH",5},{"SOC","HIGH",0.5},{"ChargeRate","LOW",-1}},
  {{"Temparature","OK",0},{"SOC","OK",0},{"ChargeRate","OK",0}};*/
-  batteryCondition testResultArray1
+  batteryCondition testResultArray1;
   /*  batteryCondition testResultArray[3];
    ;
 
