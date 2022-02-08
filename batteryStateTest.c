@@ -6,7 +6,7 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 
 {
 
-	for (int i=0;i<=3;i++)
+	for (int i=0;i<=1;i++)
 	{
 		int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
 			
@@ -14,8 +14,9 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				{
 				assert(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j])== 0);
 				assert(strcmp(batteryCond.status[j] , testResultarray[i].status[j])== 0);
-				assert(floorf(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].breachedValue[j]);
-				assert(result == resultBattStatus[i]);
+				
+		assert(floorf(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].breachedValue[j]);
+		assert(result == resultBattStatus[i]);
 				}
 	}
 
@@ -32,14 +33,24 @@ int main()
  {{"Temparature","LOW",-1.5},{"SOC","OK",0},{"ChargeRate","OK",0}},
  {{"Temparature","HIGH",5},{"SOC","HIGH",0.5},{"ChargeRate","LOW",-1}},
  {{"Temparature","OK",0},{"SOC","OK",0},{"ChargeRate","OK",0}};*/
- 
-    batteryCondition testResultArray[3];
-    batteryCondition testResultArray1;
+  batteryCondition testResultArray1
+  /*  batteryCondition testResultArray[3];
+   ;
 
-	testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
+		testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
 		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
 		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
-		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
+		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};*/
+	testResultArray1.parameter[0] = "Temparature";
+	testResultArray1.parameter[1] = "Temparature";
+	testResultArray1.parameter[2] = "Temparature";
+	testResultArray1.status[2] = "LOW";
+	testResultArray1.status[1] = "LOW";
+	testResultArray1.status[0] = "LOW";
+	testResultArray1 breachedValue[0] = 1;	
+	testResultArray1 breachedValue[1] = 1;	
+	testResultArray1 breachedValue[2] = 1;	
+		
 	int resultBattStatus[] = {1,1,1,0};
 	
     resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray,limitArray,resultBattStatus);
