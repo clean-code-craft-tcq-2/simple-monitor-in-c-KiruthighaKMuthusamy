@@ -5,7 +5,7 @@ batteryCondition batteryCond;
 
 const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
-/*
+
 breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
 	breachAndValue result= {0,0.0};
@@ -27,29 +27,24 @@ breachAndValue checkHigherLimit(float input, float highLimit)        // Avioding
 	}
 	return result;
 }
-*/
+
 void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter)
 {
 	printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
+	
 }
 
 void limitCheck(float value, float *limit, int parameter)
 {
 	
-/*
+
 breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
-
+/*
 strcpy(batteryCond.parameter[parameter], batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);  // Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
 */
-breachAndValue lowerResult;
-	lowerResult.status  = 1;
-	lowerResult.breachedValue=  0.1;
-breachAndValue higherResult ;
-	higherResult.status = 0;
-	higherResult.breachedValue=  0.1;
 
 printStatus(lowerResult,higherResult,parameter);
 
