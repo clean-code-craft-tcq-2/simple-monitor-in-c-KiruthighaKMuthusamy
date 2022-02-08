@@ -9,8 +9,8 @@
 #define OK 0
 
 
-const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
-const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
+extern  char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
+extern char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
 typedef struct batteryCondition
 {
