@@ -33,8 +33,8 @@ void limitCheck(float value, float *limit, int parameter)
 breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
-strcpy(batteryParameters[parameter], batteryCond.parameter[parameter]);
-strcpy(batteryStatus[lowerResult.status + higherResult.status] , batteryCond.status[parameter]);  // Update the structure with HIGH\LOW status and  breached measure.
+strcpy(batteryCond.parameter[parameter], batteryParameters[parameter]);
+strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);  // Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
 
 printStatus(lowerResult,higherResult,parameter);
