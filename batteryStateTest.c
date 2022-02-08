@@ -49,7 +49,7 @@ int main()
 	testResultArray1[0].status[0] = "LOW";
 	testResultArray1[0].breachedValue[0] = 1;	
 	testResultArray1[0].breachedValue[1] = 1;	
-	testResultArray1[0].reachedValue[2] = 1;	
+	testResultArray1[0].breachedValue[2] = 1;	
 		testResultArray1[1].parameter[0] = "Temparature";
 	testResultArray1[1].parameter[1] = "Temparature";
 	testResultArray1[1].parameter[2] = "Temparature";
@@ -58,7 +58,7 @@ int main()
 	testResultArray1[1].status[0] = "LOW";
 	testResultArray1[1].breachedValue[0] = 1;	
 	testResultArray1[1].breachedValue[1] = 1;	
-	testResultArray1[1].reachedValue[2] = 1;	
+	testResultArray1[1].breachedValue[2] = 1;	
 	int resultBattStatus[] = {1,1,1,0};
 	
     resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);
