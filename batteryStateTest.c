@@ -13,10 +13,9 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				for (int j=0;j<3;j++)
 				{
 				assert(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j])== 0);
-				assert(strcmp(batteryCond.status[j] , testResultarray[i].parameter[j])== 0);
-				
-		assert(floorf(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].parameter[j]);
-		assert(result == resultBattStatus[i]);
+				assert(strcmp(batteryCond.status[j] , testResultarray[i].status[j])== 0);
+				assert(floorf(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].breachedValue[j]);
+				assert(result == resultBattStatus[i]);
 				}
 	}
 
@@ -37,7 +36,7 @@ int main()
     batteryCondition testResultArray[3];
     batteryCondition testResultArray1;
 
-	testResultArray1 =  {"Temparature","SOC","ChargeRate"},{"OK","LOW","HIGH"},{-1.5,0,0.1};
+	testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
 		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
 		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
 		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
