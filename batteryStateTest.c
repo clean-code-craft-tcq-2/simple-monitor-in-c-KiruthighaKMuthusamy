@@ -5,11 +5,11 @@
 void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus)
 {
 
-for (int i=0,i<=3,i++)
+for (int i=0 ; i<=3 ; i++)
 {
 	    int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
 		
-		for (int j=0, j<2,j++)
+		for (int j=0 ; j<2 ;j++)
 		{
 		asset(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j]) == 0);
 		}
