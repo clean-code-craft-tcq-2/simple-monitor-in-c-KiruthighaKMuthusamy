@@ -42,6 +42,7 @@ breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 strcpy((batteryCond.parameter[parameter]), batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);// Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
+printStatus(lowerResult,higherResult,parameter);
 }
 
 void temperatureIsOk(float temperature, float *tempLimitArray)
