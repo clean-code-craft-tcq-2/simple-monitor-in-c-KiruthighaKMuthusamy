@@ -1,5 +1,8 @@
 #include "batteryStateCheck.h"
 
+batteryCondition batteryCond;
+
+
 const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
