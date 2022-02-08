@@ -2,8 +2,8 @@
 
 batteryCondition batteryCond;
 
-const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
-const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
+const char batteryParameters[3][15] = {"Temperature", "SOC", "ChargeRate"};
+const char* batteryStatus[3][5] = {"OK", "HIGH", "LOW"};
 
 breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
