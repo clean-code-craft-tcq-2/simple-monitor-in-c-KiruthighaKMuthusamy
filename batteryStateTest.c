@@ -15,7 +15,7 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				{
 				assert(strncmp(batteryCond.parameter[j] , testResultarray[i].parameter[j], 7)== 0);
 				assert(strncmp(batteryCond.status[j] , testResultarray[i].status[j], 2)== 0);
-				//assert(batteryCond.breachedValue[j]  == testResultarray[i].breachedValue[j]);		
+				assert(batteryCond.breachedValue[j]  == testResultarray[i].breachedValue[j]);		
 				printf("\n NALLAPAARU ------------------------------------\n %f,%f", batteryCond.breachedValue[j]  , testResultarray[i].breachedValue[j]);
 					
 				}
