@@ -37,7 +37,7 @@ int main()
 	
 
  
-   batteryCondition testResultArray[] =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}},
+   batteryCondition testResultArray[4] =  {{"Temparature","SOC","ChargeRate"},{"OK","LOW","HIGH"},{-1.5,0,0.1}},
 		{{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}}
 		,{{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}}
 		, {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
@@ -80,8 +80,8 @@ testResultArray1[0].parameter[0] = "Temparature";
 	testResultArray1[3].status[0] = "LOW";
 	testResultArray1[3].breachedValue[0] = 1;	
 	testResultArray1[3].breachedValue[1] = 1;	
-	testResultArray1[3].breachedValue[2] = 1;
-	int resultBattStatus[] = {1,1,1,0};*/
+	testResultArray1[3].breachedValue[2] = 1;*/
+	int resultBattStatus[] = {1,1,1,0};
 	
     resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray,limitArray,resultBattStatus);
 }
