@@ -20,7 +20,7 @@ struct batteryCondition
 	
 }batteryCond;
 
-extern typedef struct BreachAndValue
+typedef struct 
 {
 	int status;
 	float breachedValue;
