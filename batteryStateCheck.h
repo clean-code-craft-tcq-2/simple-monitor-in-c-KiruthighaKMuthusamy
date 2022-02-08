@@ -20,11 +20,11 @@ struct batteryCondition
 	
 }batteryCond;
 
-extern struct breachAndValue
+extern typedef struct BreachAndValue
 {
 	int status;
 	float breachedValue;
-};
+}breachAndValue;
 
 
 int checkLowerLimit(float input, float lowLimit);
@@ -34,4 +34,4 @@ void limitCheck(float value, float *limit, int parameter);
 int temperatureIsOk(float temperature, float *limitArray);
 int SOCIsOk(float soc, float *limitArray);
 int chargeRateIsOk(float chargeRate, float *limitArray);
-bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) ;
+boolean batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) ;
