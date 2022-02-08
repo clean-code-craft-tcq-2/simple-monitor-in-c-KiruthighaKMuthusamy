@@ -73,5 +73,6 @@ int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArra
   SOCIsOk(soc,&limitArray[2]);
   chargeRateIsOk(chargeRate,&limitArray[4]);
   return(int)((batteryCond.breachedValue[0]) || (batteryCond.breachedValue[1]) || (batteryCond.breachedValue[2]));
+	printf("kiru"1\n);
 }
 
