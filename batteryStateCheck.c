@@ -1,5 +1,8 @@
 #include "batteryStateCheck.h"
 
+const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
+const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
+
 breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
 	breachAndValue result= {0,0.0};
