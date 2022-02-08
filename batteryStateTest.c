@@ -26,9 +26,9 @@ int main()
 	float testSOCList[] = {19.5 , 40 , 80.5 , 40};
 	float testChargeRateList[] = {0.9,0.5,-1} , 0.3;
 	
-    batteryCondition testResultArray[3] = {{"Temparature","OK",0},{"SOC","Low",0.5},{"ChargeRate","HIGH",0.1}},{{"Temparature","LOW",-1.5},{"SOC","OK",0},{"ChargeRate","OK",0}},{{"Temparature","HIGH",5},{"SOC","HIGH",0.5},{"ChargeRate","LOW",-1}},{{"Temparature","OK",0},{"SOC","OK",0},{"ChargeRate","OK",0}};
-	bool resultBattStatus[3] = {1,1,1,0};
+    batteryCondition testResultArray[] = {{"Temparature","OK",0},{"SOC","Low",0.5},{"ChargeRate","HIGH",0.1}},{{"Temparature","LOW",-1.5},{"SOC","OK",0},{"ChargeRate","OK",0}},{{"Temparature","HIGH",5},{"SOC","HIGH",0.5},{"ChargeRate","LOW",-1}},{{"Temparature","OK",0},{"SOC","OK",0},{"ChargeRate","OK",0}};
+	bool resultBattStatus[] = {1,1,1,0};
 	
-    resultCheck(testTempList,,testSOCList,testChargeRateList,testResultArray,resultBattStatus);
+    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray,limitArray,resultBattStatus);
 }
 
