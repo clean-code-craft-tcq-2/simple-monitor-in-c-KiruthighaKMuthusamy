@@ -2,7 +2,7 @@
 
 batteryCondition batteryCond;
 
-const char* batteryParameters[] = {"Temperature", "StateCharge", "ChaargeRate"};
+const char* batteryParameters[] = {"Temperature", "StateofCharge", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
 breachAndValue checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
@@ -39,17 +39,9 @@ void limitCheck(float value, float *limit, int parameter)
 
 breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
-
 strcpy((batteryCond.parameter[parameter]), batteryParameters[parameter]);
-strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]); 
-	// Update the structure with HIGH\LOW status and  breached measure.
+strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);// Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
-
-/*printf("%d,%f",lowerResult.status,lowerResult.breachedValue);
-printf("%d,%f",higherResult.status,higherResult.breachedValue);
-printf("%s",batteryCond.status[parameter]);*/
-printStatus(lowerResult,higherResult,parameter);
-
 }
 
 void temperatureIsOk(float temperature, float *tempLimitArray)
@@ -77,7 +69,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArra
   temperatureIsOk(temperature,&limitArray[0]);
   SOCIsOk(soc,&limitArray[2]);
   chargeRateIsOk(chargeRate,&limitArray[4]);
-  return(int)((batteryCond.breachedValue[0]) || (batteryCond.breachedValue[1]) || (batteryCond.breachedValue[2]));
+  return(int)((batteryCond.breachedValue[0]) || (batteryCond.breachedValue[1]) || (batteryCond.breachedValue[2])); //checking whether the battery is OK
 	
 }
 
