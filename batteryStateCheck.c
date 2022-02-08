@@ -1,10 +1,6 @@
 #include "batteryStateCheck.h"
 
 batteryCondition batteryCond;
-batteryCond.parameters[0] =  malloc(sizeof(*batteryCond.parameters[0]));
-batteryCond.parameters[1] = malloc(sizeof(*batteryCond.parameters[1]));
-batteryCond.parameters[2] = malloc(sizeof(*batteryCond.parameters[2]))
-
 
 const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
