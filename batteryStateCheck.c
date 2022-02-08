@@ -1,6 +1,9 @@
 #include "batteryStateCheck.h"
 
 batteryCondition batteryCond;
+batteryCond.parameters[0][10] = {0};
+batteryCond.parameters[1][10] = {0};
+batteryCond.parameters[1][10] = {0};
 
 
 const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
@@ -41,8 +44,8 @@ void limitCheck(float value, float *limit, int parameter)
 breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
-/*strcpy(*(batteryCond.parameter[parameter]), batteryParameters[parameter]);*/
-/*	strcpy(batteryCond.status[parameter], "LOW");
+strcpy(*(batteryCond.parameter[parameter]), batteryParameters[parameter]);*/
+/*strcpy(batteryCond.status[parameter], "LOW");
 /*	
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);  */// Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
