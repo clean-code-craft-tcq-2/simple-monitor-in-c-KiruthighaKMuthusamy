@@ -3,7 +3,7 @@
 
 // Assert statement is encapsulated in a function 
 
-void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultarray,float *limitArray, int *resultBattStatus)
+/*void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultarray,float *limitArray, int *resultBattStatus)
 
 {
 
@@ -21,19 +21,17 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				}
 	}
 
-}
+}*/
 
 int main() 
 {
     float limitArray[] =   {0,45,20,80,0,0.8}; // Lower and Upper  Boundaries for all the 3 parametes 
-	float testTempList[]  =      {20.5 , -1.5 , 50 , 40};         
+	batteryIsOk(20.5,10,0.5,limitArray)
+/*	float testTempList[]  =      {20.5 , -1.5 , 50 , 40};         
 	float testSOCList[] =        {19.5 , 40   , 80.5 , 40};
 	float testChargeRateList[] = {0.9,   0.5,   -1 , 0.3};
 	
- /*//batteryCondition testResultArray[] = {{"Temparature","OK",0},{"SOC","Low",0.5},{"ChargeRate","HIGH",0.1}},
- {{"Temparature","LOW",-1.5},{"SOC","OK",0},{"ChargeRate","OK",0}},
- {{"Temparature","HIGH",5},{"SOC","HIGH",0.5},{"ChargeRate","LOW",-1}},
- {{"Temparature","OK",0},{"SOC","OK",0},{"ChargeRate","OK",0}};*/
+
  batteryCondition testResultArray1[2];
   /*  batteryCondition testResultArray[3];
    ;
@@ -42,7 +40,7 @@ int main()
 		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
 		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
 		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};*/
-	testResultArray1[0].parameter[0] = "Temparature";
+/*	testResultArray1[0].parameter[0] = "Temparature";
 	testResultArray1[0].parameter[1] = "Temparature";
 	testResultArray1[0].parameter[2] = "Temparature";
 	testResultArray1[0].status[2] = "LOW";
@@ -80,6 +78,6 @@ int main()
 	testResultArray1[3].breachedValue[2] = 1;
 	int resultBattStatus[] = {1,1,1,0};
 	
-    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);
+    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);*/
 }
 
