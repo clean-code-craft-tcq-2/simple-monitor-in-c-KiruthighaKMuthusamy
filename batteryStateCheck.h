@@ -29,9 +29,9 @@ struct breachAndValue
 
 int checkLowerLimit(float input, float lowLimit);
 int checkHigherLimit(float input, float highLimit);
-printStatus(int lowerResult , int higherResult , int parameter);
-limitCheck(float value, float &limit, int parameter);
-int temperatureIsOk(float temperature, float &limitArray);
-int SOCIsOk(float soc, float &limitArray);
-int chargeRateIsOk(float chargeRate, float &limitArray);
-bool batteryIsOk(float temperature, float soc, float chargeRate, float &limitArray) ;
+void printStatus(int lowerResult , int higherResult , int parameter);
+void limitCheck(float value, float *limit, int parameter);
+int temperatureIsOk(float temperature, float *limitArray);
+int SOCIsOk(float soc, float *limitArray);
+int chargeRateIsOk(float chargeRate, float *limitArray);
+bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) ;
