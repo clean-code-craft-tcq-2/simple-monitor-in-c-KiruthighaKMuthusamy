@@ -2,7 +2,7 @@
 
 int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
-	breachAndValue result= {0,0.0};
+	struct breachAndValue result= {0,0.0};
 	if (input  < lowLimit)
 	{
 	result.status = LOW;
@@ -13,7 +13,7 @@ int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 
 int checkHigherLimit(float input, float highLimit)        // Avioding Duplication
 {
-	breachAndValue result= {0,0.0);
+	struct breachAndValue result= {0,0.0);
 	if (input  > highLimit)
 	{
 	result.status = HIGH;
@@ -22,12 +22,12 @@ int checkHigherLimit(float input, float highLimit)        // Avioding Duplicatio
 	return breachAndValue;
 }
 
-printStatus(int lowerResult , int higherResult , int parameter)
+void printStatus(int lowerResult , int higherResult , int parameter)
 {
 	printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
 }
 
-limitCheck(float value, float &limit, int parameter)
+void limitCheck(float value, float *limit, int parameter)
 {
 
 breachAndValue lowerResult = checkLowerLimit(chargeRate , limit[0]);
@@ -61,7 +61,7 @@ int chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 
 
 
-bool batteryIsOk(float temperature, float soc, float chargeRate, float &limitArray) 
+bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
 {
   temperatureIsOk(temperature,&limitArray[0]);
   SOCIsOk(soc,&limitArray[2]);
