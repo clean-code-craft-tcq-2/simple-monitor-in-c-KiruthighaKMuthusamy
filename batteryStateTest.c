@@ -28,7 +28,7 @@ int main()
 	printf("kirumain\n");
     float limitArray[] =   {0,45,20,80,0,0.8}; // Lower and Upper  Boundaries for all the 3 parametes 
 	
-		int result = batteryIsOk(20.5,10,0.5,limitArray);
+		int result = batteryIsOk(50,10,0.5,limitArray);
 	
 /*	float testTempList[]  =      {20.5 , -1.5 , 50 , 40};         
 	float testSOCList[] =        {19.5 , 40   , 80.5 , 40};
