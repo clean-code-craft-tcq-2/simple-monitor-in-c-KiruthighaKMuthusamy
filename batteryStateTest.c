@@ -25,6 +25,7 @@
 
 int main() 
 {
+	printf("kirumain\n");
     float limitArray[] =   {0,45,20,80,0,0.8}; // Lower and Upper  Boundaries for all the 3 parametes 
 	
 		int result = batteryIsOk(20.5,10,0.5,limitArray);
