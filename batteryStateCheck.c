@@ -2,24 +2,24 @@
 
 int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
-	struct breachAndValue result= {0,0.0};
+	breachAndValue result= {0,0.0};
 	if (input  < lowLimit)
 	{
 	result.status = LOW;
 	result.breachedValue = lowLimit - input ;	 // Calculate the breached value
 	}
-    return breachAndValue;
+    return result;
 }
 
 int checkHigherLimit(float input, float highLimit)        // Avioding Duplication
 {
-	struct breachAndValue result= {0,0.0);
+	breachAndValue result= {0,0.0};
 	if (input  > highLimit)
 	{
 	result.status = HIGH;
 	result.breachedValue = input - highLimit ;	 // Calculate the breached value
 	}
-	return breachAndValue;
+	return result;
 }
 
 void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter)
@@ -30,8 +30,8 @@ void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int 
 void limitCheck(float value, float *limit, int parameter)
 {
 
-breachAndValue lowerResult = checkLowerLimit(chargeRate , limit[0]);
-breachAndValue higherResult = checkHigherLimit(chargeRate , limit[1]);
+breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
+breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
 strcpy(batteryCond.parameter[parameter],batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter],batteryStatus[lowerResult.status + higherResult.status];  // Update the structure with HIGH\LOW status and  breached measure.
@@ -61,7 +61,7 @@ int chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 
 
 
-bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
+boolean batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
 {
   temperatureIsOk(temperature,&limitArray[0]);
   SOCIsOk(soc,&limitArray[2]);
