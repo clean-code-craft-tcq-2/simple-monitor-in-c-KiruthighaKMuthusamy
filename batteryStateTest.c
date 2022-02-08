@@ -2,20 +2,21 @@
 
 // Assert statement is encapsulated in a function 
 
-void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus)
+void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultarray,float *limitArray, int *resultBattStatus)
+
 {
 
-for (int i=0 ; i<=3 ; i++)
-{
-	    int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
-		
-		for (int j=0 ; j<2 ;j++)
-		{
-		asset(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j]) == 0);
-		}
-	    asset(floorf(batteryCond.parameter[3] * 100 )/ 100 == testResultarray[i].parameter[j]);
+	for (int i=0;i<=3;i++)
+	{
+		int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
+			
+				for (int j=0;j<2;j++)
+				{
+				assert(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j])== 0);
+				}
+		assert(floorf(batteryCond.parameter[3] * 100) / 100 == testResultarray[i].parameter[j]);
 		asset(result == resultBattStatus[i]);
-}
+	}
 
 }
 
@@ -33,9 +34,9 @@ int main()
  
     batteryCondition testResultArray[4];
 
-	testResultArray[0] =  {{"Temparature","SOC","ChargeRate"},{"OK","Low","HIGH"},{-1.5,0,0.1}};
-		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"Low","OK","OK"},{5,0,0}};
-		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","Low"},{5,0.5,-1}};
+	testResultArray[0] =  {"Temparature","SOC","ChargeRate"},{"OK","LOW","HIGH"},{-1.5,0,0.1};
+		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
+		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
 		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
 	int resultBattStatus[] = {1,1,1,0};
 	
