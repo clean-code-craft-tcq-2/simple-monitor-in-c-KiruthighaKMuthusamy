@@ -26,25 +26,28 @@ breachAndValue checkHigherLimit(float input, float highLimit)        // Avioding
 	}
 	return result;
 }
-/*
+
 void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter)
 {
 	printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
 }
-*/
+
 void limitCheck(float value, float *limit, int parameter)
 {
 	
-
+/*
 breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
 strcpy(batteryCond.parameter[parameter], batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]);  // Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
-/*
-printStatus(lowerResult,higherResult,parameter);
 */
+breachAndValue lowerResult = {LOW , 0.1};
+breachAndValue higherResult = (OK , 0};
+
+printStatus(lowerResult,higherResult,parameter);
+
 }
 
 void temperatureIsOk(float temperature, float *tempLimitArray)
