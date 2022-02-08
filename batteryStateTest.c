@@ -17,10 +17,10 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				assert(strcmp(batteryCond.status[j] , testResultarray[i].status[j])== 0);
 				//assert(batteryCond.breachedValue[j]  == testResultarray[i].breachedValue[j]);
 		
-					/*printf("\n NALLAPAARU \n %s,%s",batteryCond.parameter[j] , testResultarray[i].parameter[j] );
+					printf("\n NALLAPAARU \n %s,%s",batteryCond.parameter[j] , testResultarray[i].parameter[j] );
 					       printf("\n NALLAPAARU \n %s,%s",batteryCond.status[j] , testResultarray[i].status[j]);
 					 printf("\n NALLAPAARU \n %f,%f", batteryCond.breachedValue[j]  , testResultarray[i].breachedValue[j]);
-					 printf("\n NALLAPAARU \n %d %d",result , resultBattStatus[i]);*/
+					 printf("\n NALLAPAARU \n %d %d",result , resultBattStatus[i]);
 				}
 		
 	}
