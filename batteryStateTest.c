@@ -1,4 +1,5 @@
 #include "batteryStateCheck.h"
+#include <math.h>
 
 // Assert statement is encapsulated in a function 
 
@@ -15,7 +16,7 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 				assert(strcmp(batteryCond.parameter[j] , testResultarray[i].parameter[j])== 0);
 				assert(strcmp(batteryCond.status[j] , testResultarray[i].status[j])== 0);
 				
-		assert(floor(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].breachedValue[j]);
+		assert(round(batteryCond.breachedValue[j] * 100) / 100 == testResultarray[i].breachedValue[j]);
 		assert(result == resultBattStatus[i]);
 				}
 	}
