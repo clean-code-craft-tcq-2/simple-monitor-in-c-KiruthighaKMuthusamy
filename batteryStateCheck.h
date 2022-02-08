@@ -1,3 +1,6 @@
+#ifndef batteryStateCheck_h
+#define batteryStateCheck_h
+
 #include <stdio.h>
 #include <assert.h>
 #include <math.h>
@@ -9,8 +12,8 @@
 #define OK 0
 
 
-extern  char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
-extern char* batteryStatus[] = {"OK", "HIGH", "LOW"};
+const  char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
+const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
 typedef struct batteryCondition
 {
@@ -36,3 +39,5 @@ void SOCIsOk(float soc, float *limitArray);
 void chargeRateIsOk(float chargeRate, float *limitArray);
 int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray);
 void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus);
+
+#endif
