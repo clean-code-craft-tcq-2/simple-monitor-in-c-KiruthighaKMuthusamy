@@ -1,4 +1,4 @@
-#include "batteryStateCheck".h
+#include "batteryStateCheck.h"
 
 int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
