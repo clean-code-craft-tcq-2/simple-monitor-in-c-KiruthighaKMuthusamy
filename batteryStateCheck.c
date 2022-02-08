@@ -30,8 +30,8 @@ void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int 
 void limitCheck(float value, float *limit, int parameter)
 {
 
-breachAndValue lowerResult = checkLowerLimit(value , limit);
-breachAndValue higherResult = checkHigherLimit(value , ++limit);
+breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
+breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
 strcpy(batteryCond.parameter[parameter],batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter],batteryStatus[lowerResult.status + higherResult.status]);  // Update the structure with HIGH\LOW status and  breached measure.
@@ -41,20 +41,20 @@ printStatus(lowerResult,higherResult,parameter);
 
 }
 
-int temperatureIsOk(float temperature, float *tempLimitArray)
+void temperatureIsOk(float temperature, float *tempLimitArray)
 {
 (limitCheck(temperature,tempLimitArray, 0));
   
 }
 
-int SOCIsOk(float soc, float *SOCLimitArray)
+void SOCIsOk(float soc, float *SOCLimitArray)
 {
  
 (limitCheck(soc, SOCLimitArray, 1));
   
 }
 
-int chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
+void chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 {  
 (limitCheck(chargeRate, chargeRateLimitArray, 2)); 
 }
@@ -66,6 +66,6 @@ bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArr
   temperatureIsOk(temperature,&limitArray[0]);
   SOCIsOk(soc,&limitArray[2]);
   chargeRateIsOk(chargeRate,&limitArray[4]);
-  return((batteryCond[0].breachedValue) || (batteryCond[1].breachedValue) || (batteryCond[2].breachedValue));
+  return((batteryCond.breachedValue[0]) || (batteryCond.breachedValue[1]) || (batteryCond.breachedValue[2]));
 }
 
