@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <assert.h>
-#include <math.h>
 #include <string.h>
 
 
@@ -19,6 +18,7 @@ typedef struct batteryCondition
 	
 }batteryCondition;
 extern batteryCondition batteryCond;
+
 typedef struct BreachAndValue
 {
 	int status;
