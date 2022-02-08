@@ -20,7 +20,7 @@ struct batteryCondition
 	
 }batteryCond;
 
-struct breachAndValue
+extern struct breachAndValue
 {
 	int status;
 	float breachedValue;
