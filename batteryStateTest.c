@@ -10,12 +10,12 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 	for (int i=0;i<=3;i++)
 	{
 		int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
-			     //   assert(result == resultBattStatus[i]);
+			   assert(result == resultBattStatus[i]);
 		         	for (int j=0;j<3;j++)
 				{
 				assert(strncmp(batteryCond.parameter[j] , testResultarray[i].parameter[j], 7)== 0);
 				assert(strncmp(batteryCond.status[j] , testResultarray[i].status[j], 2)== 0);
-				assert(batteryCond.breachedValue[j]  == testResultarray[i].breachedValue[j]);		
+				assert((int)batteryCond.breachedValue[j]  == (int)testResultarray[i].breachedValue[j]);		
 				printf("\n NALLAPAARU ------------------------------------\n %f,%f", batteryCond.breachedValue[j]  , testResultarray[i].breachedValue[j]);
 					
 				}
