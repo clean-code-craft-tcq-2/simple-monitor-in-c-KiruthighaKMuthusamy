@@ -29,7 +29,7 @@ breachAndValue checkHigherLimit(float input, float highLimit)        // Avioding
 
 void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter)
 {
-	//printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
+	printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f \n",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
 	
 }
 
@@ -41,15 +41,13 @@ breachAndValue lowerResult = checkLowerLimit(value , limit[0]);
 breachAndValue higherResult = checkHigherLimit(value , limit[1]);
 
 strcpy((batteryCond.parameter[parameter]), batteryParameters[parameter]);
-strcpy(batteryCond.status[parameter], "LOW");
-
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult.status + higherResult.status]); 
 	// Update the structure with HIGH\LOW status and  breached measure.
 batteryCond.breachedValue[parameter] = higherResult.breachedValue + lowerResult.breachedValue;
 
 /*printf("%d,%f",lowerResult.status,lowerResult.breachedValue);
-printf("%d,%f",higherResult.status,higherResult.breachedValue);*/
-printf("%s",batteryCond.status[parameter]);
+printf("%d,%f",higherResult.status,higherResult.breachedValue);
+printf("%s",batteryCond.status[parameter]);*/
 printStatus(lowerResult,higherResult,parameter);
 
 }
@@ -80,6 +78,6 @@ int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArra
   SOCIsOk(soc,&limitArray[2]);
   chargeRateIsOk(chargeRate,&limitArray[4]);
   return(int)((batteryCond.breachedValue[0]) || (batteryCond.breachedValue[1]) || (batteryCond.breachedValue[2]));
-	printf("kiru1\n");
+	
 }
 
