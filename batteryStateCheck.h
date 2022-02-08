@@ -12,14 +12,14 @@
 const char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
-struct batteryCondition
+typedef struct batteryCondition
 {
 	char* parameter[3];
 	char* status[3];
 	float breachedValue[3];
 	
-}batteryCond;
-
+}batteryCondition;
+estern batteryCondition batteryCond;
 typedef struct BreachAndValue
 {
 	int status;
@@ -34,5 +34,5 @@ void limitCheck(float value, float *limit, int parameter);
 void temperatureIsOk(float temperature, float *limitArray);
 void SOCIsOk(float soc, float *limitArray);
 void chargeRateIsOk(float chargeRate, float *limitArray);
-bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray);
-void resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray,limitArray,resultBattStatus);
+int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray);
+void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus);
