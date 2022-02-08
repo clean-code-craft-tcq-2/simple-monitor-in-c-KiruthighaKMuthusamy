@@ -7,7 +7,7 @@ void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateLi
 
 {
 
-	for (int i=0;i<=1;i++)
+	for (int i=0;i<=3;i++)
 	{
 		int result = batteryIsOk(testTempList[i],testSOCList[i],testChargeRateList[i],limitArray);
 			
@@ -37,11 +37,10 @@ int main()
 	
 
  
-   batteryCondition testResultArray[3];
-   	testResultArray1 =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}};
-		testResultArray[1] = {{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
-		testResultArray[2] = {{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
-		testResultArray[3] = {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
+   batteryCondition testResultArray[] =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}},
+		{{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
+		,{{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
+		, {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
 	
 	
 /*
@@ -84,6 +83,6 @@ testResultArray1[0].parameter[0] = "Temparature";
 	testResultArray1[3].breachedValue[2] = 1;
 	int resultBattStatus[] = {1,1,1,0};*/
 	
-    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray1,limitArray,resultBattStatus);
+    resultCheck(testTempList,testSOCList,testChargeRateList,testResultArray,limitArray,resultBattStatus);
 }
 
