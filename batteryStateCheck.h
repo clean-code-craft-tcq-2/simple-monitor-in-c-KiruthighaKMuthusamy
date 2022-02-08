@@ -11,10 +11,6 @@
 #define HIGH 1
 #define OK 0
 
-
-char* batteryParameters[] = {"Temperature", "SOC", "ChargeRate"};
-char* batteryStatus[] = {"OK", "HIGH", "LOW"};
-
 typedef struct batteryCondition
 {
 	char* parameter[3];
