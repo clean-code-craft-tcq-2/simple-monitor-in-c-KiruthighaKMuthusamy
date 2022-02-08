@@ -38,8 +38,8 @@ int main()
 
  
    batteryCondition testResultArray[] =  {{{"Temparature"},{"SOC"},{"ChargeRate"}},{{"OK"},{"LOW"},{"HIGH"}},{-1.5,0,0.1}},
-		{{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}};
-		,{{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}};
+		{{"Temparature","SOC","ChargeRate"},{"LOW","OK","OK"},{5,0,0}}
+		,{{"Temparature","SOC","ChargeRate"},{"HIGH","HIGH","LOW"},{5,0.5,-1}}
 		, {{"Temparature","SOC","ChargeRate"},{"OK","OK","OK"},{0,0,0}};
 	
 	
