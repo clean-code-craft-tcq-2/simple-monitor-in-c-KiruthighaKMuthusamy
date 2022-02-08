@@ -1,8 +1,8 @@
-#include "batteryStateCheck.h
+#include "batteryStateCheck".h
 
 int checkLowerLimit(float input, float lowLimit)       // Avioding Duplication
 {
-	breachAndValue result= {0,0.0);
+	breachAndValue result= {0,0.0};
 	if (input  < lowLimit)
 	{
 	result.status = LOW;
