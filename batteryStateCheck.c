@@ -22,7 +22,7 @@ int checkHigherLimit(float input, float highLimit)        // Avioding Duplicatio
 	return breachAndValue;
 }
 
-void printStatus(int lowerResult , int higherResult , int parameter)
+void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter)
 {
 	printf(" Lower Limit of %s is %s\n Higher Limit of %s is %s\n and the breached value is %0.2f",batteryCond.parameter[parameter],batteryStatus[lowerResult.status],batteryCond.parameter[parameter],batteryStatus[higherResult.status],(higherResult.breachedValue + lowerResult.breachedValue));
 }
