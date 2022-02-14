@@ -56,7 +56,7 @@ return((limitCheck(soc, SOCLimitArray, 1)););
 
 bool chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 {  
-return((limitCheck(chargeRate, chargeRateLimitArray, 2)); );;
+return((limitCheck(chargeRate, chargeRateLimitArray, 2)); );
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
