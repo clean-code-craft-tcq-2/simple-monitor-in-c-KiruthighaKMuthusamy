@@ -23,7 +23,7 @@ int checkHigherLimit(float input, float highLimit)
 	return result;
 }
 
-void printStatus(int lowerResult , int higherResult , int parameter)
+void printStatus( int parameter)
 {
 	printf(" %s is %s \n",batteryCond.parameter[parameter],batteryCond.status[parameter]);
 	
@@ -36,7 +36,7 @@ int lowerResult = checkLowerLimit(value , limit[0]);
 int higherResult = checkHigherLimit(value , limit[1]);
 strcpy((batteryCond.parameter[parameter]), batteryParameters[parameter]);
 strcpy(batteryCond.status[parameter], batteryStatus[lowerResult + higherResult]);
-printStatus(lowerResult,higherResult,parameter);
+printStatus(parameter);
 return (lowerResult || higherResult);
 }
 
