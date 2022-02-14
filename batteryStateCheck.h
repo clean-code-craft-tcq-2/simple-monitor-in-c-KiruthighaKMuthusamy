@@ -2,6 +2,7 @@
 #define batteryStateCheck_h
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <assert.h>
 #include <string.h>
 
@@ -10,30 +11,25 @@
 #define HIGH 1
 #define OK 0
 
-typedef struct batteryCondition
+typedef struct batterycondition
 {
 	char parameter[3][15];
 	char status[3][5];
-	float breachedValue[3];
-	
+		
 }batteryCondition;
 extern batteryCondition batteryCond;
 
-typedef struct BreachAndValue
-{
-	int status;
-	float breachedValue;
-}breachAndValue;
 
 
-breachAndValue checkLowerLimit(float input, float lowLimit);
-breachAndValue checkHigherLimit(float input, float highLimit);
-void printStatus(breachAndValue lowerResult , breachAndValue higherResult , int parameter);
-void limitCheck(float value, float *limit, int parameter);
-void temperatureIsOk(float temperature, float *limitArray);
-void SOCIsOk(float soc, float *limitArray);
-void chargeRateIsOk(float chargeRate, float *limitArray);
-int batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray);
-void resultCheck(float *testTempList, float *testSOCList,float *testChargeRateList, batteryCondition *testResultArray,float *limitArray, int *resultBattStatus);
+int checkLowerLimit(float input, float lowLimit) ;
+int checkHigherLimit(float input, float highLimit);
+void printStatus(int parameter);
+bool limitCheck(float value, float *limit, int parameter);
+bool temperatureIsOk(float temperature, float *tempLimitArray);
+bool SOCIsOk(float soc, float *SOCLimitArray);
+bool chargeRateIsOk(float chargeRate, float *chargeRateLimitArray);
+bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) ;
+
+
 
 #endif
