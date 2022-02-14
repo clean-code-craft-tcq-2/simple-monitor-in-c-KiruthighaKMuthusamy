@@ -1,7 +1,6 @@
 #include "batteryStateCheck.h"
 
 batteryCondition batteryCond;
-
 const char* batteryParameters[] = {"Temperature", "StateofCharge", "ChargeRate"};
 const char* batteryStatus[] = {"OK", "HIGH", "LOW"};
 
@@ -43,25 +42,29 @@ return (lowerResult || higherResult);
 
 bool temperatureIsOk(float temperature, float *tempLimitArray)
 {
-return((limitCheck(temperature,tempLimitArray, 0)););
-  
+bool result = limitCheck(temperature,tempLimitArray, 0);
+  return result;
 }
 
 bool SOCIsOk(float soc, float *SOCLimitArray)
 {
  
-return((limitCheck(soc, SOCLimitArray, 1)););
+bool result = (limitCheck(soc, SOCLimitArray, 1));
+return result;
   
 }
 
 bool chargeRateIsOk(float chargeRate, float *chargeRateLimitArray)
 {  
-return((limitCheck(chargeRate, chargeRateLimitArray, 2)); );
+bool result = limitCheck(chargeRate, chargeRateLimitArray, 2);
+return result;
 }
 
 bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
-{
-return( temperatureIsOk(temperature,&limitArray[0]) ||  SOCIsOk(soc,&limitArray[2]) || chargeRateIsOk(chargeRate,&limitArray[4]) );
+{bool resultTemp,resultSoc,resultChargeRate;
+resultTemp = temperatureIsOk(temperature,&limitArray[0]);
+resultSoc = SOCIsOk(soc,&limitArray[2]);
+resultChargeRate = chargeRateIsOk(chargeRate,&limitArray[4]);
+return(resultTemp|| resultSoc||resultChargeRate);
 	
 }
-
