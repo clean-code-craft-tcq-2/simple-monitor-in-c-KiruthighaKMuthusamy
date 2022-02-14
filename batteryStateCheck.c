@@ -26,7 +26,7 @@ int checkHigherLimit(float input, float highLimit)
 
 void printStatus(int lowerResult , int higherResult , int parameter)
 {
-	printf(" %s is %s\ \n",batteryCond.parameter[parameter],batteryCond.status[parameter]);
+	printf(" %s is %s \n",batteryCond.parameter[parameter],batteryCond.status[parameter]);
 	
 }
 
