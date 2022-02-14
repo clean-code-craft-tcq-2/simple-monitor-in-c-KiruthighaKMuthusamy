@@ -11,7 +11,7 @@
 #define HIGH 1
 #define OK 0
 
-typedef struct batteryCondition
+typedef struct batterycondition
 {
 	char parameter[3][15];
 	char status[3][5];
@@ -26,9 +26,10 @@ int checkHigherLimit(float input, float highLimit);
 void printStatus(int lowerResult , int higherResult , int parameter);
 bool limitCheck(float value, float *limit, int parameter);
 bool temperatureIsOk(float temperature, float *tempLimitArray);
-bool SOCIsOk(float soc, float *SOCLimitArray)
+bool SOCIsOk(float soc, float *SOCLimitArray);
 bool chargeRateIsOk(float chargeRate, float *chargeRateLimitArray);
-bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) 
+bool batteryIsOk(float temperature, float soc, float chargeRate, float *limitArray) ;
+
 
 
 #endif
