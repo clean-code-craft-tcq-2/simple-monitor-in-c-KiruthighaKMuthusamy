@@ -23,7 +23,7 @@ extern batteryCondition batteryCond;
 
 int checkLowerLimit(float input, float lowLimit) ;
 int checkHigherLimit(float input, float highLimit);
-void printStatus(int lowerResult , int higherResult , int parameter);
+void printStatus(int parameter);
 bool limitCheck(float value, float *limit, int parameter);
 bool temperatureIsOk(float temperature, float *tempLimitArray);
 bool SOCIsOk(float soc, float *SOCLimitArray);
