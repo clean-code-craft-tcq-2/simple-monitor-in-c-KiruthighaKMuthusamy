@@ -1,5 +1,7 @@
 #include "batteryStateCheck.h"
 
+int languageSelector = GERMAN;
+
 batteryCondition batteryCond;
 
 DiffLanguage alertNotes[2]= {{{"Temperature", "StateofCharge", "ChargeRate"},{"OK","LOW_WARNING","LOW_ERROR","HIGH_WARNING","HIGH_ERROR"}},{{"Temperatur","Ladezustand", "Ladestrom"},{"OK","NIEDRIG_WARNUNG","NIEDRIG_ERROR","HOCH_WARNUNG","HOCH_ERROR"}}};
