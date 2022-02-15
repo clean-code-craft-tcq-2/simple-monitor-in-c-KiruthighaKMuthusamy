@@ -16,8 +16,6 @@
 #define HIGHWARNING 3
 #define HIGHERROR 4
 
-int languageSelector = GERMAN;
-
 typedef struct batterycondition
 {
 	char parameter[3][20];
