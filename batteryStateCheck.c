@@ -84,6 +84,6 @@ resultTemp = temperatureIsOk(temperature,&limitArray[0]);
 resultSoc = SOCIsOk(soc,&limitArray[2]);
 resultChargeRate = chargeRateIsOk(chargeRate,&limitArray[4]);
 
-return(resultTemp|| resultSoc||resultChargeRate);
+return(!(resultTemp|| resultSoc||resultChargeRate));
 	
 }
