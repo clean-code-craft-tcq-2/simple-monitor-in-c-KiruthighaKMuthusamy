@@ -1,4 +1,4 @@
-#Developer's Hint#
+#Developer's Hint
 
 Added Feature: Early Warning and Language Addition
 
