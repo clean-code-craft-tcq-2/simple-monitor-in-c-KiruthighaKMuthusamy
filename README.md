@@ -1,3 +1,7 @@
+#Developer's Hint
+
+Added Feature: Early Warning and Language Addition
+
 # Programming Paradigms
 
 Electric Vehicles have BMS - Battery Management Systems
